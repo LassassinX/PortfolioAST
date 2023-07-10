@@ -1,16 +1,17 @@
 "use client"
 import { useEffect } from 'react';
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+import Swiper from 'swiper';
+import {Pagination} from 'swiper/modules'; 
+import 'swiper/css/bundle'; 
 
-export default function Carousel({ gameData }: {
-	gameData: any
-}) {
+export default function Carousel() {
+
 	useEffect(() => {
 		let swiper = new Swiper('.swiper', {
 			direction: 'horizontal',
 			loop: true,
 			parallax: true,
+			modules: [Pagination],
 			// pagination
 			pagination: {
 				el: '.swiper-pagination',
@@ -27,9 +28,7 @@ export default function Carousel({ gameData }: {
 							</span>
 						</div>`;
 					}
-					return `<div class="${className}" style="
-						background-image: url(${gameData[index - 2].cover_url});
-					">
+					return `<div class="${className}" style="">
 						
 					</div>`;
 				},
@@ -63,18 +62,18 @@ export default function Carousel({ gameData }: {
 									Game Developer
 								</h1>
 								<p>
-									My name is Ahmed Saad Tanim. I'm a creative professional with more than 5 years of experience in the field of game development. I have worked on a wide range of projects, including 2D and 3D games, mobile games, and VR games. I have also worked on a variety of platforms, including PC, mobile, and VR. I have a strong passion for game development and I'm always looking for new challenges. I'm currently working as a freelance game developer and I'm looking for new opportunities.
+									My name is Ahmed Saad Tanim. I&apos;m a creative professional with more than 5 years of experience in the field of game development. I have worked on a wide range of projects, including 2D and 3D games, mobile games, and VR games. I have also worked on a variety of platforms, including PC, mobile, and VR. I have a strong passion for game development and I&apos;m always looking for new challenges. I&apos;m currently working as a freelance game developer and I&apos;m looking for new opportunities.
 								</p>
 							</div>
 						</div>
 						{/* Dynamic game slides */}
-						{
+						{/* {
 							gameData.map((game: any, index: number) => {
 								return (
 									<div key={index} className="swiper-slide">{game.title}</div>
 								)
 							})
-						}
+						} */}
 					</div>
 				</div>
 			</div>
