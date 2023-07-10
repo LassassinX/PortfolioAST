@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+		fontFamily:{
+			'icons': ['Material Symbols'],
+			'title': ['Title'],
+		},
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -14,5 +18,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+	require('@tailwindcss/typography'),
+  ],
 }
